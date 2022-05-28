@@ -30,6 +30,8 @@ class ImageReader:
           sizes[temp_image.shape] = sizes.get(temp_image.shape, 0) + 1
       true_shape = max(sizes, key=sizes.get)
 
+      self.__image_size = true_shape
+
       for i in range(len(temp_arr)):
           if temp_arr[i].shape[0] > true_shape[0] and temp_arr[i].shape[1] > true_shape[1]:
               temp_arr[i] = cv2.resize(temp_arr[i], dsize=(true_shape[1], true_shape[0]), interpolation=cv2.INTER_CUBIC)
