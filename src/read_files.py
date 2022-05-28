@@ -3,14 +3,13 @@ import cv2
 import matplotlib.pyplot as plt
 
 class ImageReader:
-  __images = []
-  __labels = []
-  __images_paths = []
-  __labels_paths = []
-  __image_size = None
-  __image_count = 0
   def __init__(self):
-    pass
+    self.__images = []
+    self.__labels = []
+    self.__images_paths = []
+    self.__labels_paths = []
+    self.__image_size = None
+    self.__image_count = 0
 
   def __call__(self, dataset_path: str, mime_type: str) -> None:
       study = [folder for folder in os.listdir(dataset_path) if os.path.isdir(os.path.join(dataset_path, folder))]
